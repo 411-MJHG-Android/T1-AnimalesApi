@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgis/postgis:16-master
+    container_name: t1_animals_api
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_PASSWORD=contraseñasecreta
+      - POSTGRES_DB=animalsdb
+    volumes:
+      - postgres_data_db:/var/lib/postgresql
+ 
+volumes:
+  postgres_data_db:
